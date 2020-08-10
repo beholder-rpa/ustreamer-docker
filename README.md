@@ -2,6 +2,11 @@
 
 Docker image for [µStreamer](https://github.com/pikvm/ustreamer) optimized for the Raspberry Pi
 
+
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/beholderrpa/ustreamer)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/beholderrpa/ustreamer)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/beholderrpa/ustreamer/latest)
+
 Surfaces a Http-based streaming server that captures data from a USB webcam or HDMI capture device attached to the Raspberry Pi. As a docker container, µStreamer is pre-built for the Raspberry Pi, can run as a service or part of a pod/swarm, and orchestrated via services such as [Balena](https://www.balena.io/).
 
 
