@@ -25,6 +25,8 @@ RUN [ "cross-build-end" ]
 
 FROM balenalib/raspberrypi3-debian:${DISTRO_VER} as RUN
 
+RUN [ "cross-build-start" ]
+
 RUN apt-get update && \
     apt-get install -y \
         ca-certificates \
@@ -34,6 +36,8 @@ RUN apt-get update && \
         uuid \
         libbsd0 \
         wiringpi
+
+RUN [ "cross-build-end" ]
 
 WORKDIR /ustreamer
 COPY --from=build /build/ustreamer/ustreamer .

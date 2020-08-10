@@ -1,6 +1,6 @@
 # ustreamer-docker
 
-Docker image for [ustreamer](https://github.com/pikvm/ustreamer)
+Docker image for [ustreamer](https://github.com/pikvm/ustreamer) optimized for the Raspberry Pi
 
 Build with
 ``` sh
