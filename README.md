@@ -9,5 +9,5 @@ docker build -t beholderrpa/ustreamer:latest .
 
 Run with
 ``` sh
-docker run --privledged -v /dev/video0 beholderrpa/ustreamer
+docker run --privileged --device /dev/video0 -p 8080:8080 beholderrpa/ustreamer
 ```

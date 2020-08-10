@@ -21,13 +21,22 @@ RUN git clone --depth=1 https://github.com/pikvm/ustreamer
 
 WORKDIR /build/ustreamer/
 RUN make WITH_OMX=1 WITH_GPIO=1
-RUN ./ustreamer --help
 RUN [ "cross-build-end" ]
 
 FROM balenalib/raspberrypi3-debian:${DISTRO_VER} as RUN
-WORKDIR /ustreamer
 
+RUN apt-get update && \
+    apt-get install -y \
+        ca-certificates \
+        libevent-2.1 \
+        libevent-pthreads-2.1-6 \
+        libjpeg8 \
+        uuid \
+        libbsd0 \
+        wiringpi
+
+WORKDIR /ustreamer
 COPY --from=build /build/ustreamer/ustreamer .
 
 EXPOSE 8080
-ENTRYPOINT [ "ustreamer" ]
+ENTRYPOINT [ "./ustreamer" ]
