@@ -39,4 +39,4 @@ WORKDIR /ustreamer
 COPY --from=build /build/ustreamer/ustreamer .
 
 EXPOSE 8080
-ENTRYPOINT [ "./ustreamer" ]
+ENTRYPOINT [ "./ustreamer", "--host=0.0.0.0", "--slowdown"]
